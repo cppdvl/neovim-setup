@@ -10,8 +10,7 @@ call plug#begin()
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'cdelledonne/vim-cmake'
-Plug 'liuchengxu/vim-better-default'
-Plug 'Shuogo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim'
 Plug 'ncm2/float-preview.nvim'
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
