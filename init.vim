@@ -16,7 +16,7 @@ Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'w0rp/ale'
 Plug 'liuchengxu/vim-clap'
-
+Plug 'Olical/conjure', { 'tag' : 'v4.3.1' }
 
 
 call plug#end()
