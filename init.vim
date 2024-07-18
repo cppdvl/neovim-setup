@@ -4,11 +4,24 @@
 :set shiftwidth=4
 :set smarttab
 :set softtabstop=4
+:set expandtab
+:set noswapfile
 :set mouse=a
 
 call plug#begin() 
 
+Plug 'git@github.com:airblade/vim-gitgutter'
+Plug 'git@github.com:mfussenegger/nvim-lint'
+Plug 'git@github.com:williamboman/mason.nvim'
+Plug 'git@github.com:williamboman/mason-lspconfig.nvim'
+Plug 'git@github.com:neovim/nvim-lspconfig'
+Plug 'git@github.com:nvim-lua/plenary.nvim'
+Plug 'git@github.com:nvim-telescope/telescope.nvim'
+Plug 'git@github.com:arzg/vim-colors-xcode.git'
+Plug 'git@github.com:vim-airline/vim-airline.git'
+Plug 'git@github.com:vim-airline/vim-airline-themes.git'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'cdelledonne/vim-cmake'
 Plug 'Shougo/deoplete.nvim'
 Plug 'ncm2/float-preview.nvim'
@@ -17,7 +30,7 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'w0rp/ale'
 Plug 'liuchengxu/vim-clap'
 Plug 'Olical/conjure', { 'tag' : 'v4.3.1' }
-
+Plug 'folke/tokyonight.nvim'
 
 call plug#end()
 
@@ -25,6 +38,9 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('keyword_patterns', {'clojure': '[\w!$%&*+/:<=>?@\^_~\-\.#]*'})
 set completeopt-=preview
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 let g:float_preview#docked = 0
 let g:float_preview#max_width = 80
@@ -48,3 +64,11 @@ nnoremap <leader>fl :Clap blines<cr>
 nnoremap <leader>fL :Clap lines<cr>
 nnoremap <leader>ft :Clap filetypes<cr>
 nnoremap <leader>fm :Clap marks<cr>
+
+
+
+nmap <leader>cg :CMakeGenerate<cr>
+nmap <leader>cb :CMakeBuild<cr>
+
+let g:cmake_link_compile_commands = 1
+
