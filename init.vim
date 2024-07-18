@@ -17,7 +17,7 @@ Plug 'git@github.com:williamboman/mason-lspconfig.nvim'
 Plug 'git@github.com:neovim/nvim-lspconfig'
 Plug 'git@github.com:nvim-lua/plenary.nvim'
 Plug 'git@github.com:nvim-telescope/telescope.nvim'
-Plug 'git@github.com:arzg/vim-colors-xcode.git'
+Plug 'git@github.com:lunacookie/vim-colors-xcode.git'
 Plug 'git@github.com:vim-airline/vim-airline.git'
 Plug 'git@github.com:vim-airline/vim-airline-themes.git'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
