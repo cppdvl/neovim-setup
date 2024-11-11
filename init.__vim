@@ -70,5 +70,12 @@ nnoremap <leader>fm :Clap marks<cr>
 nmap <leader>cg :CMakeGenerate<cr>
 nmap <leader>cb :CMakeBuild<cr>
 
+augroup copilot_colors
+    autocmd!
+    autocmd ColorScheme * highlight CopilotSuggestion guifg=#20c88a guibg=NONE
+augroup END
+
+highlight CopilotSuggestion guifg=#20c88a guibg=NONE
+
 let g:cmake_link_compile_commands = 1
 
