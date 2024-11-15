@@ -35,7 +35,7 @@ end)
 
 vim.g.ale_enabled = 0
 --python3
-vim.g.python3_host_prog = '/usr/bin/python3'
+vim.g.python3_host_prog = '/Users/julianguarin/.pyenv/shims/python3'
 
 -- Deoplete settings
 vim.g['deoplete#enable_at_startup'] = 1
