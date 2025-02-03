@@ -1,1 +1,4 @@
 pack/
+.ccls-cache/
+test.cpp
+.gitignore.swp
