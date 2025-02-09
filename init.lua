@@ -7,7 +7,7 @@ vim.opt.smarttab = true
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.swapfile = false
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 require("config.lazy")
 
@@ -20,20 +20,22 @@ vim.keymap.set("v", "<space>x", ":lua<CR>")
 
 -- Press \ti to toggle the indentation mode
 vim.keymap.set("n", "<leader>ti", function()
-    if vim.opt.tabstop:get() == 2 then
-        vim.opt.tabstop = 4
-        vim.opt.shiftwidth = 4
-        vim.opt.softtabstop = 4
-        vim.opt.expandtab = true -- use space instead of tabs
-        print("switched to 4-space identation")
-    else 
-        vim.opt.tabstop = 2
-        vim.opt.shiftwidth = 2
-        vim.opt.softtabstop = 2
-        vim.opt.expandtab = true -- use space instead of tabs
-        print("switched to 2-space identation")
-    end
+	if vim.bo.tabstop == 2 then
+		vim.bo.tabstop = 4
+		vim.bo.shiftwidth = 4
+		vim.bo.softtabstop = 4
+		vim.bo.expandtab = true -- use space instead of tabs
+		print("switched to 4-space identation")
+	else
+		vim.bo.tabstop = 2
+		vim.bo.shiftwidth = 2
+		vim.bo.softtabstop = 2
+		vim.bo.expandtab = true -- use space instead of tabs
+		print("switched to 2-space identation")
+	end
 end, { desc = "Toggle indentation and expandtab" })
+
+require("config.cmake.cmake")
 
 -- Initialize packer.nvim
 -- require('packer').startup(function()
@@ -125,4 +127,3 @@ end, { desc = "Toggle indentation and expandtab" })
 --
 ---- CMake settings
 --vim.g.cmake_link_compile_commands = 1
-
