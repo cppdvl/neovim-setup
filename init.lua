@@ -10,6 +10,7 @@ vim.opt.swapfile = false
 vim.opt.mouse = "a"
 
 require("config.lazy")
+vim.lsp.set_log_level("debug")
 
 -- Configurations
 vim.keymap.set("n", "<space>cc", ":e ~/.config/nvim/init.lua<CR>")
@@ -36,6 +37,9 @@ vim.keymap.set("n", "<leader>ti", function()
 end, { desc = "Toggle indentation and expandtab" })
 
 require("config.cmake.cmake")
+
+-- Ultra Reset
+vim.keymap.set("n", "<space> RRRR", ":bufdo bwipeout!<CR>")
 
 -- Initialize packer.nvim
 -- require('packer').startup(function()

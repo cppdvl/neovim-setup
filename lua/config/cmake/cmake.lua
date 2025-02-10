@@ -1,12 +1,22 @@
 -- Compilation on Terminal Magic with CMAKE --
 -- -------------- --
---
---
 -- Step 1: -- Create a CMakeLists.txt for your project.
 -- Step 2: -- Create a Build Directory and execute your cmake initial config command.
 -- Step 3: -- Press <space>bld OR <space>, you will be prompted
 --
+
 -- no number on terminal opening event
+local os_name = vim.loop.os_uname().sysname
+
+if os_name == "Darwin" then
+	vim.env.CPATH = vim.fn.system("xcrun --show-sdk-path"):gsub("\n", "") .. "/usr/include"
+	vim.env.CPLUS_INCLUDE_PATH = vim.env.CPATH
+elseif os_name == "Linux" then
+	vim.env.CPATH = "/usr/include"
+	vim.env.CPLUS_INCLUDE_PATH = "/usr/include"
+else
+	vim.notify("Windows is not yet supported", vim.log.levels.WARN)
+end
 vim.api.nvim_create_autocmd("TermOpen", {
 	group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
 	callback = function()
